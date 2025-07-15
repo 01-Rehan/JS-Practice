@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <div class="cal_body">
+        <div class="navbar">
+            <h3>Calculator</h3>
+        </div>
+        <div class="display-sec">
+        </div>
+        <div class="input_section">
+            <div class="button-row row1">
+                <div class="buttons" onclick="
+                     calculation =' ';
+                     displayvalue();
+                ">AC</div>
+                <div class="buttons" onclick="
+                    calculation = calculation.slice(0, -1);
+                    displayvalue();
+                ">C</div>
+                <div class="buttons" onclick="updateValue(' % ');">%</div>
+                <div class="buttons operators" onclick="updateValue(' / ');">/</div>
+            </div>
+            <div class="button-row row2">
+                <div class="buttons" onclick="updateValue('7');">7</div>
+                <div class="buttons" onclick="updateValue('8');">8</div>
+                <div class="buttons" onclick="updateValue('9');">9</div>
+                <div class="buttons operators" onclick="updateValue(' * ');">*</div>
+            </div>
+            <div class="button-row row3">
+                <div class="buttons" onclick="updateValue('4');">4</div>
+                <div class="buttons" onclick="updateValue('5');">5</div>
+                <div class="buttons" onclick="updateValue('6');;">6</div>
+                <div class="buttons operators" onclick="updateValue(' - ');">-</div>
+            </div>
+            <div class="button-row row4">
+                <div class="buttons" onclick="updateValue('1');" >1</div>
+                <div class="buttons" onclick="updateValue('2');">2</div>
+                <div class="buttons" onclick="updateValue('3');">3</div>
+                <div class="buttons operators" onclick="updateValue(' + ');">+</div>
+            </div>
+            <div class="button-row row5">
+                <div style="width: 175px;" class="buttons" onclick="updateValue('0');">0</div>
+                <div class="buttons" onclick="updateValue('.');">.</div>
+                <div style="background-color: rgb(255, 72, 0);" class="buttons" onclick="total()">=</div>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
