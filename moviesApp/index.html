@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A page listing top IMDB movies">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A page listing top IMDB movies" />
     <title>Movie App</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    
-    <h1>Top IMdB Movies list</h1>
-    <span>Here is the top rated films from the IMDb</span> 
-    <div class="container">
-        
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <div class="logo">
+        <h1>Top IMdB Movies list</h1>
+        <span>Here is the top rated films from the IMDb</span>
+      </div>
+      <div class="input">
+          <input type="text" class="search" placeholder="Search Movies" >
+          <select name="lang" id="">
+            <option value="EN">English</option>
+            <option value="TH">Thai</option>
+            <option value="NL">Dutch</option>
+          </select>
+      </div>
     </div>
 
+    <div class="container"></div>
+
     <script type="module" src="./script.js"></script>
-</body>
+  </body>
 </html>

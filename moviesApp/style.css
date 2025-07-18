@@ -18,21 +18,54 @@
 body{
     background-color: var(--mainBgColor);
 }
+.page-heading{
+    height: max-content;
+    width: 100vw;
+    background-color: var(--mainBgColor);
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px 20px 50px;
+    z-index: 10;
+    flex-wrap: wrap;
+}
+.logo{
+    height: max-content;
+    width: max-content;
+}
 h1{
     color: var(--fontcolor);
-    padding: 20px 0 0 20px;
 }
 span{
-        padding-left: 20px;
+        color: var(--fontcolor);
+}
+.input input{
+    height: 36px;
+    width: 25rem;
+    max-width: 100%;
+    min-width: 120px;
+    background-color: transparent;
+    border: 2px solid rgb(137, 137, 137);
+    border-radius: 5px;
+    padding: 10px;
+    /* margin-top: 10px; */
+    color: var(--fontcolor);
+    align-items: center;
+    flex: 1 1 150px;
+}
+input:focus{
+    outline: none;
+    border-color: rgb(137, 137, 137);           
+    box-shadow: none;  
 }
 .container{
     width: 100vw;
     height: max-content;
-    display: flex;
-    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill ,minmax(15rem,1fr));
     gap: 20px;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    padding:  115px 50px 40px 50px;
 }
 .card{
     width: 270px;
@@ -43,9 +76,9 @@ span{
     display: flex;
     flex-wrap:wrap ;
     padding: 20px;
-    margin-bottom:10px ;
     transition: scale 0.3s;
     box-shadow: 4px 4px 10px rgb(10, 20, 70);
+    overflow-y: hidden;
 }
 .card:hover{
     scale: 1.05;
@@ -66,7 +99,4 @@ span{
 }
 .description{
     font-size: 15px ;
-}
-span{
-    color: var(--fontcolor);
 }
