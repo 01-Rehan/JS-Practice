@@ -37,9 +37,10 @@ const container = document.querySelector(".container");
 function createCard(MovieArray){
     container.innerText = '';
 
-    if(MovieArray == []){
+    if(MovieArray.length === 0){
         container.innerText = "Couldn't find any results";
-    }else{
+        return;
+    }
 
     MovieArray.forEach(movie =>{
 
@@ -78,7 +79,6 @@ function createCard(MovieArray){
             container.appendChild(card);
         })   
     } 
-}
 
 let filterdArray;
 let currentSearchTerm = '';
