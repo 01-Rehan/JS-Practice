@@ -37,6 +37,10 @@ const container = document.querySelector(".container");
 function createCard(MovieArray){
     container.innerText = '';
 
+    if(MovieArray == []){
+        container.innerText = "Couldn't find any results";
+    }else{
+
     MovieArray.forEach(movie =>{
 
             let card = create("div");
@@ -72,7 +76,8 @@ function createCard(MovieArray){
     
                 card.appendChild(infoCon);        
             container.appendChild(card);
-        })    
+        })   
+    } 
 }
 
 let filterdArray;
@@ -100,10 +105,25 @@ function langHandler(event,element){
     applyFilters();
 }
 
-searchWord.addEventListener("keyup", function (event){
-  SearchHandler(event,this) ; 
-} );
+const debouncedSearch = debounce(function (event) {
+    SearchHandler(event, searchWord);
+}, 300); 
+
+searchWord.addEventListener("keyup", debouncedSearch);
+
 languageinput.addEventListener("change", function (event){
   langHandler(event,this) ; 
 } );
+
+
+function debounce(func, delay) {
+    let timeoutId;
+    return function (...args) {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+            func.apply(this, args);
+        }, delay);
+    };
+}
+
 initializeApp();
