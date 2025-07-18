@@ -1,6 +1,8 @@
 import axios  from 'https://cdn.skypack.dev/axios';
 const api = "c083e2f95a6317ae05910d55cec56315";
-const searchWord = document.querySelector(".search");
+let searchWord = document.querySelector(".search");
+let languageinput = document.querySelector(".lang");
+
 let allmovies;
 
 async function fetchMovieData () {
@@ -73,19 +75,35 @@ function createCard(MovieArray){
         })    
 }
 
-function SearchHandler(event,element){
-    let searchTerm = element.value.toLowerCase().trim();
+let filterdArray;
+let currentSearchTerm = '';
+let currentLangTerm = '';
 
-    let filterdArray;
-    if(searchTerm.length > 0)
-        filterdArray = allmovies.filter(movie =>  movie.original_title.toLowerCase().includes(searchTerm)) ;
-    else
-        filterdArray = allmovies;
-    
+function applyFilters(){
+    filterdArray = allmovies.filter(movie =>{
+        let matchSearch = !currentSearchTerm ||
+                        movie.original_title.toLowerCase().includes(currentSearchTerm);
+        let matchLang = !currentLangTerm || 
+                        movie.original_language.toLowerCase().includes(currentLangTerm);
+
+        return matchLang && matchSearch;
+    });
     createCard(filterdArray);
+
+}
+function SearchHandler(event,element){
+    currentSearchTerm = element.value.toLowerCase().trim();
+    applyFilters();
+}
+function langHandler(event,element){
+    currentLangTerm = event.target.value.toLowerCase().trim();
+    applyFilters();
 }
 
 searchWord.addEventListener("keyup", function (event){
   SearchHandler(event,this) ; 
+} );
+languageinput.addEventListener("change", function (event){
+  langHandler(event,this) ; 
 } );
 initializeApp();
