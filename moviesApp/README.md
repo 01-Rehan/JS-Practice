@@ -7,7 +7,7 @@
   (the search filter and language filter can both be applied at the same time) <br>
   Responsive design <br>
 ### used the axios, async/await , Api fething which are the neccessary to learn :) (getting tired and writing this at around 12am (for me when i look back into the past :) ))<br>
-don't forget to get an api key from TMDb website
+don't forget to get an api key from TMDb website <br>
 images :<br><br>
 <img width="1920" height="2948" alt="screencapture-127-0-0-1-5500-JS-Learning-moviesApp-index-html-2025-07-18-13_55_14" src="https://github.com/user-attachments/assets/5b5e69dd-7ee8-4ef0-8cd9-cda5ec35f0b9" />
 
