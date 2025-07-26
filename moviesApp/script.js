@@ -1,5 +1,5 @@
 import axios  from 'https://cdn.skypack.dev/axios';
-const api = "c083e2f95a6317ae05910d55cec56315";
+const api = ""; // enter your own api 🪬
 let searchWord = document.querySelector(".search");
 let languageinput = document.querySelector(".lang");
 
